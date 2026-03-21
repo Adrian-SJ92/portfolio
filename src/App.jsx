@@ -1,5 +1,6 @@
 import './i18n';
 import './styles/globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
@@ -29,6 +30,7 @@ export default function App() {
       </main>
       <Footer />
       <ScrollToTop />
+      <Analytics />
     </>
   );
 }
