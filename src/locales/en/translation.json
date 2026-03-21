@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Fullstack Developer",
+    "description": "Building digital experiences with modern technologies. Passionate about clean code and elegant solutions.",
+    "cta": "View my work",
+    "contact": "Get in touch",
+    "downloadCV": "Download CV"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My journey",
+    "current": "Current",
+    "solbyte": {
+      "role": "Fullstack Developer — R&D",
+      "bullets": [
+        "Building solutions in the Research & Development department with a focus on artificial intelligence.",
+        "Developing web applications with PHP, Laravel and Filament, integrating automation workflows with n8n.",
+        "Data management and modelling with MongoDB and SQLite in production environments."
+      ]
+    },
+    "freelance": {
+      "role": "Freelance Fullstack Developer",
+      "bullets": [
+        "End-to-end web application development for clients, from database design to user interface.",
+        "Projects built with React, Node.js and MySQL, including REST APIs and admin dashboards.",
+        "Autonomous project management: estimation, delivery and client communication."
+      ]
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Who I am",
+    "bio1": "I'm a Fullstack Developer based in Málaga. I currently work in the R&D department at Solbyte S.L., building solutions focused on artificial intelligence using PHP, Laravel, Filament, and automation workflows with n8n.",
+    "bio2": "Before joining Solbyte I spent a year as a freelance developer, building full-stack web applications with React, Node.js and MySQL. I'm passionate about solving real problems with clean code and well-thought-out solutions.",
+    "yearsLabel": "Years of experience",
+    "projectsLabel": "Projects completed",
+    "techLabel": "Technologies"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "My tech stack",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Database",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "What I've built",
+    "viewCode": "Code",
+    "viewDemo": "Demo",
+    "project1": {
+      "title": "Soti Barber Studio",
+      "description": "Fullstack appointment manager for barber shops. Clients can book, cancel and manage their appointments online. Built with React, Node.js and MySQL."
+    },
+    "project2": {
+      "title": "MotoStyleHub",
+      "description": "Social platform for motorcycle fashion designers. Users can register, create profiles and share their custom moto designs with the community. Stack: Node.js, MySQL and EJS."
+    },
+    "project3": {
+      "title": "Sync User Service",
+      "description": "REST API in Node.js and TypeScript for synchronizing users in PostgreSQL. Features Zod validation, health check endpoint, correlation IDs for tracing, and Docker Compose deployment."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "description": "Have a project in mind or just want to say hello? Feel free to reach out.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent! I'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Tell me about your project..."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

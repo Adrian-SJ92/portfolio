@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(mkdir -p About Contact Experience Hero Projects Skills)",
+      "Bash(mv About.jsx About/index.jsx)",
+      "Bash(mv About.css About/About.css)",
+      "Bash(mv Contact.jsx Contact/index.jsx)",
+      "Bash(mv Contact.css Contact/Contact.css)",
+      "Bash(grep:*)",
+      "Bash(mkdir -p CustomCursor Footer Navbar ScrollToTop)",
+      "Bash(mv CustomCursor.jsx CustomCursor/index.jsx)",
+      "Bash(mv CustomCursor.css CustomCursor/CustomCursor.css)",
+      "Bash(mv Footer.jsx Footer/index.jsx)",
+      "Bash(mv Footer.css Footer/Footer.css)"
+    ]
+  }
+}
