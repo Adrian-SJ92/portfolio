@@ -6,7 +6,7 @@ import './About.css';
 const stats = [
   { key: 'yearsLabel', value: '2+', num: 2 },
   { key: 'projectsLabel', value: '10+', num: 10 },
-  { key: 'techLabel', value: '8+', num: 8 },
+  { key: 'techLabel', value: '15+', num: 15 },
 ];
 
 function Counter({ num, suffix, trigger }) {
