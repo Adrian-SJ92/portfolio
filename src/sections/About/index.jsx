@@ -66,18 +66,11 @@ function useTypewriter(phrases) {
   return text;
 }
 
-const typewriterPhrases = [
-  'Construyendo con IA en Solbyte',
-  'Apasionado por el código limpio',
-  'Fullstack · Frontend · Backend',
-  'Siempre aprendiendo, siempre construyendo',
-];
-
 export default function About() {
   const { t } = useTranslation();
   const statsRef = useRef(null);
   const [counterStarted, setCounterStarted] = useState(false);
-  const typeText = useTypewriter(typewriterPhrases);
+  const typeText = useTypewriter(t('about.typewriter', { returnObjects: true }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(

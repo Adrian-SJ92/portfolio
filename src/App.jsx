@@ -1,12 +1,14 @@
 import './i18n';
 import './styles/globals.css';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Experience from './sections/Experience';
+import Education from './sections/Education';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
@@ -24,6 +26,7 @@ export default function App() {
         <Hero />
         <About />
         <Experience />
+        <Education />
         <Skills />
         <Projects />
         <Contact />
@@ -31,6 +34,7 @@ export default function App() {
       <Footer />
       <ScrollToTop />
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }

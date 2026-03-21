@@ -2,6 +2,7 @@
   "nav": {
     "about": "About",
     "experience": "Experience",
+    "education": "Education",
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact"
@@ -35,11 +36,37 @@
       ]
     }
   },
+  "education": {
+    "title": "Education",
+    "subtitle": "My background",
+    "bootcamp": {
+      "degree": "Full Stack Web Developer Bootcamp",
+      "bullets": [
+        "Intensive fullstack web development training with modern technologies.",
+        "Frontend with React and JavaScript; backend with Node.js, Express and both relational and NoSQL databases.",
+        "Real hands-on projects applying agile methodologies and version control with Git."
+      ]
+    },
+    "fp": {
+      "degree": "Vocational Training — Commerce & Marketing",
+      "bullets": []
+    },
+    "eso": {
+      "degree": "Secondary Education Certificate (ESO)",
+      "bullets": []
+    }
+  },
   "about": {
     "title": "About Me",
     "subtitle": "Who I am",
     "bio1": "I'm a Fullstack Developer based in Málaga. I currently work in the R&D department at Solbyte S.L., building solutions focused on artificial intelligence using PHP, Laravel, Filament, and automation workflows with n8n.",
     "bio2": "Before joining Solbyte I spent a year as a freelance developer, building full-stack web applications with React, Node.js and MySQL. I'm passionate about solving real problems with clean code and well-thought-out solutions.",
+    "typewriter": [
+      "Building with AI at Solbyte",
+      "Passionate about clean code",
+      "Fullstack · Frontend · Backend",
+      "Always learning, always building"
+    ],
     "yearsLabel": "Years of experience",
     "projectsLabel": "Projects completed",
     "techLabel": "Technologies"
@@ -83,7 +110,8 @@
     "error": "Something went wrong. Please try again.",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your@email.com",
-    "messagePlaceholder": "Tell me about your project..."
+    "messagePlaceholder": "Tell me about your project...",
+    "phoneLabel": "Phone"
   },
   "footer": {
     "rights": "All rights reserved."

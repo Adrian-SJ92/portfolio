@@ -2,6 +2,7 @@
   "nav": {
     "about": "Sobre mí",
     "experience": "Experiencia",
+    "education": "Formación",
     "skills": "Habilidades",
     "projects": "Proyectos",
     "contact": "Contacto"
@@ -35,11 +36,37 @@
       ]
     }
   },
+  "education": {
+    "title": "Formación",
+    "subtitle": "Mi educación",
+    "bootcamp": {
+      "degree": "Bootcamp Full Stack Web Developer",
+      "bullets": [
+        "Formación intensiva en desarrollo web fullstack con tecnologías modernas.",
+        "Frontend con React y JavaScript; backend con Node.js, Express y bases de datos relacionales y NoSQL.",
+        "Proyectos prácticos reales aplicando metodologías ágiles y control de versiones con Git."
+      ]
+    },
+    "fp": {
+      "degree": "Técnico en Comercio y Marketing (FP)",
+      "bullets": []
+    },
+    "eso": {
+      "degree": "Graduado en Educación Secundaria Obligatoria",
+      "bullets": []
+    }
+  },
   "about": {
     "title": "Sobre mí",
     "subtitle": "Quién soy",
     "bio1": "Soy Desarrollador Fullstack con base en Málaga. Actualmente trabajo en el departamento de I+D de Solbyte S.L., donde construyo soluciones con foco en inteligencia artificial usando PHP, Laravel, Filament y flujos de automatización con n8n.",
     "bio2": "Antes de incorporarme a Solbyte trabajé un año como freelance, desarrollando aplicaciones web completas con React, Node.js y MySQL. Me apasiona resolver problemas reales con código limpio y soluciones bien pensadas.",
+    "typewriter": [
+      "Construyendo con IA en Solbyte",
+      "Apasionado por el código limpio",
+      "Fullstack · Frontend · Backend",
+      "Siempre aprendiendo, siempre construyendo"
+    ],
     "yearsLabel": "Años de experiencia",
     "projectsLabel": "Proyectos completados",
     "techLabel": "Tecnologías"
@@ -83,7 +110,8 @@
     "error": "Algo salió mal. Por favor intenta de nuevo.",
     "namePlaceholder": "Tu nombre",
     "emailPlaceholder": "tu@correo.com",
-    "messagePlaceholder": "Cuéntame sobre tu proyecto..."
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "phoneLabel": "Teléfono"
   },
   "footer": {
     "rights": "Todos los derechos reservados."

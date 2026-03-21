@@ -19,7 +19,7 @@ export default function Navbar() {
     localStorage.setItem('lang', next);
   };
 
-  const links = ['about', 'experience', 'skills', 'projects', 'contact'];
+  const links = ['about', 'experience', 'education', 'skills', 'projects', 'contact'];
 
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
