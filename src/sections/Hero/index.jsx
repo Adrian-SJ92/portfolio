@@ -19,7 +19,7 @@ export default function Hero() {
 
         <div className="hero__badge">
           <span className="hero__badge-dot" />
-          Available for work
+          Open to opportunities
         </div>
 
         <p className="hero__greeting">{t('hero.greeting')}</p>
