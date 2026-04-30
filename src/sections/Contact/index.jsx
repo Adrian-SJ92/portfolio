@@ -1,14 +1,88 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from '../../config/emailjs';
 import { PERSONAL } from '../../config/personal';
 import './Contact.css';
 
+const COLORS = ['0,212,255', '124,58,237', '34,197,94', '0,212,255', '255,255,255'];
+
+function burst(originEl) {
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:99998;';
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  const rect = originEl.getBoundingClientRect();
+  const ox = rect.left + rect.width / 2;
+  const oy = rect.top + rect.height / 2;
+
+  const particles = Array.from({ length: 72 }, (_, i) => {
+    const angle = (Math.PI * 2 * i) / 72 + (Math.random() - 0.5) * 0.4;
+    const speed = Math.random() * 8 + 2;
+    return {
+      x: ox, y: oy,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - Math.random() * 3,
+      w: Math.random() * 7 + 2,
+      h: Math.random() * 4 + 2,
+      rot: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - 0.5) * 0.25,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      alpha: 1,
+      isCircle: Math.random() > 0.45,
+    };
+  });
+
+  let rafId;
+  const draw = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let alive = false;
+
+    for (const p of particles) {
+      p.vy += 0.2;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.98;
+      p.alpha -= 0.015;
+      p.rot += p.rotSpeed;
+
+      if (p.alpha > 0) {
+        alive = true;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.alpha);
+        ctx.fillStyle = `rgb(${p.color})`;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        if (p.isCircle) {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        }
+        ctx.restore();
+      }
+    }
+
+    if (alive) rafId = requestAnimationFrame(draw);
+    else canvas.remove();
+  };
+
+  rafId = requestAnimationFrame(draw);
+}
+
 export default function Contact() {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const btnRef = useRef(null);
+
+  useEffect(() => {
+    if (status === 'success' && btnRef.current) burst(btnRef.current);
+  }, [status]);
 
   const handleChange = e => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -94,6 +168,7 @@ export default function Contact() {
             )}
 
             <button
+              ref={btnRef}
               type="submit"
               className="btn-primary contact__submit"
               disabled={status === 'sending'}

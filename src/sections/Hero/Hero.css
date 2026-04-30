@@ -101,6 +101,50 @@
   color: var(--text);
   margin-bottom: 16px;
   animation: fadeInUp 0.5s ease 0.2s both;
+  position: relative;
+  cursor: default;
+}
+
+.hero__name::before,
+.hero__name::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero__name::before { color: var(--accent); }
+.hero__name::after  { color: var(--accent2); }
+
+.hero__name:hover::before {
+  opacity: 1;
+  animation: glitch-a 0.55s steps(2) forwards;
+}
+
+.hero__name:hover::after {
+  opacity: 1;
+  animation: glitch-b 0.55s steps(2) 0.05s forwards;
+}
+
+@keyframes glitch-a {
+  0%   { clip-path: inset(0 0 88% 0);   transform: translate(-3px, 0); }
+  16%  { clip-path: inset(20% 0 58% 0); transform: translate(2px, 0); }
+  33%  { clip-path: inset(52% 0 26% 0); transform: translate(-2px, 1px); }
+  50%  { clip-path: inset(8% 0 76% 0);  transform: translate(3px, -1px); }
+  66%  { clip-path: inset(70% 0 8% 0);  transform: translate(-1px, 0); }
+  83%  { clip-path: inset(38% 0 46% 0); transform: translate(2px, 1px); }
+  100% { clip-path: inset(0 0 100% 0);  transform: translate(0); opacity: 0; }
+}
+
+@keyframes glitch-b {
+  0%   { clip-path: inset(60% 0 0 0);   transform: translate(3px, 1px); }
+  16%  { clip-path: inset(76% 0 5% 0);  transform: translate(-2px, 0); }
+  33%  { clip-path: inset(40% 0 22% 0); transform: translate(2px, -1px); }
+  50%  { clip-path: inset(86% 0 0 0);   transform: translate(-3px, 1px); }
+  66%  { clip-path: inset(54% 0 12% 0); transform: translate(1px, 0); }
+  83%  { clip-path: inset(66% 0 8% 0);  transform: translate(-2px, -1px); }
+  100% { clip-path: inset(100% 0 0 0);  transform: translate(0); opacity: 0; }
 }
 
 .hero__name-accent {

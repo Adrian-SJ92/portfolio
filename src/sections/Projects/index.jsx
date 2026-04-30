@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Projects.css';
 
@@ -28,6 +29,23 @@ const projects = [
 export default function Projects() {
   const { t } = useTranslation();
 
+  const onMouseMove = useCallback((e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.setProperty('--mx', `${(x + 0.5) * 100}%`);
+    card.style.setProperty('--my', `${(y + 0.5) * 100}%`);
+    card.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateZ(8px)`;
+    card.style.transition = 'transform 0.05s ease';
+  }, []);
+
+  const onMouseLeave = useCallback((e) => {
+    const card = e.currentTarget;
+    card.style.transform = '';
+    card.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+  }, []);
+
   return (
     <section id="projects" className="projects" data-reveal>
       <div className="container">
@@ -38,7 +56,7 @@ export default function Projects() {
 
         <div className="projects__grid">
           {projects.map(({ key, tags, github, demo, gradient }, i) => (
-            <article key={key} className="glass-card project-card" style={{ '--i': i }}>
+            <article key={key} className="glass-card project-card" style={{ '--i': i }} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
               <div className="project-card__header" style={{ background: gradient }}>
                 <div className="project-card__header-bar">
                   <div className="project-card__dots">

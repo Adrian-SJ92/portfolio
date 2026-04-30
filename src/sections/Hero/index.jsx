@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import avatarImg from '../../assets/avatar.jpg';
 import { PERSONAL } from '../../config/personal';
+import Magnet from '../../components/Magnet';
 import './Hero.css';
 
 export default function Hero() {
@@ -23,7 +24,7 @@ export default function Hero() {
         </div>
 
         <p className="hero__greeting">{t('hero.greeting')}</p>
-        <h1 className="hero__name">
+        <h1 className="hero__name" data-text="Adrián Sánchez">
           Adrián Sánchez<span className="hero__name-accent">.</span>
         </h1>
         <h2 className="hero__role">
@@ -34,16 +35,22 @@ export default function Hero() {
         <p className="hero__description">{t('hero.description')}</p>
 
         <div className="hero__ctas">
-          <a href="#projects" className="btn-primary">{t('hero.cta')}</a>
-          <a href="#contact" className="btn-outline">{t('hero.contact')}</a>
-          <a href={PERSONAL.cvUrl} download className="btn-outline hero__cv-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            {t('hero.downloadCV')}
-          </a>
+          <Magnet>
+            <a href="#projects" className="btn-primary">{t('hero.cta')}</a>
+          </Magnet>
+          <Magnet>
+            <a href="#contact" className="btn-outline">{t('hero.contact')}</a>
+          </Magnet>
+          <Magnet strength={0.28}>
+            <a href={PERSONAL.cvUrl} download className="btn-outline hero__cv-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              {t('hero.downloadCV')}
+            </a>
+          </Magnet>
         </div>
 
         <div className="hero__socials">

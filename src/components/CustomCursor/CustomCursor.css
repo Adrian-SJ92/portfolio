@@ -20,17 +20,14 @@
   width: 36px;
   height: 36px;
   border: 1px solid rgba(0, 212, 255, 0.6);
-  transition: transform 0.1s ease-out, width 0.2s, height 0.2s, border-color 0.2s, background 0.2s;
+  transition: width 0.2s, height 0.2s, border-color 0.2s, background 0.2s;
 }
 
 .cursor-ring--hover {
   width: 52px;
   height: 52px;
-  margin-top: -8px;
-  margin-left: -8px;
   border-color: var(--accent);
   background: rgba(0, 212, 255, 0.06);
-  transform: translate(calc(var(--x, 0px) - 26px), calc(var(--y, 0px) - 26px)) !important;
 }
 
 @media (hover: none), (pointer: coarse) {
