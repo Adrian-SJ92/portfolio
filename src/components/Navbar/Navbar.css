@@ -5,7 +5,11 @@
   right: 0;
   z-index: 1000;
   padding: 20px 0;
-  transition: var(--transition);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.3s, border-color 0.3s, padding 0.3s;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
 }
 
 .navbar--scrolled {
@@ -73,6 +77,14 @@
 }
 
 .navbar__link:hover::after {
+  width: 60%;
+}
+
+.navbar__link--active {
+  color: var(--accent);
+}
+
+.navbar__link--active::after {
   width: 60%;
 }
 

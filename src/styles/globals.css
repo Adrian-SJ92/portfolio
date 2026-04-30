@@ -236,3 +236,112 @@ img { max-width: 100%; }
     font-size: 0.88rem;
   }
 }
+
+/* Accessibility: respect OS reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Easter egg overlay */
+.easter-egg {
+  position: fixed;
+  inset: 0;
+  z-index: 99997;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 10, 14, 0.75);
+  backdrop-filter: blur(6px);
+  animation: fadeInUp 0.35s ease forwards;
+}
+
+.easter-egg__card {
+  font-family: var(--font-mono);
+  background: rgba(5, 10, 14, 0.97);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 40px 52px;
+  text-align: center;
+  box-shadow: 0 0 50px var(--accent-glow), 0 0 100px var(--accent-dim);
+  animation: fadeInUp 0.35s ease;
+  max-width: 520px;
+  width: 90%;
+}
+
+.easter-egg__comment {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.easter-egg__title {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.easter-egg__sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Pills */
+.easter-egg__pills {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.easter-egg__pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: var(--font-mono);
+  transition: var(--transition);
+}
+
+.easter-egg__pill--blue { border-color: #3b82f6; color: #3b82f6; }
+.easter-egg__pill--blue:hover {
+  background: rgba(59,130,246,0.1);
+  box-shadow: 0 0 30px rgba(59,130,246,0.35);
+  transform: translateY(-3px);
+}
+
+.easter-egg__pill--red { border-color: #ef4444; color: #ef4444; }
+.easter-egg__pill--red:hover {
+  background: rgba(239,68,68,0.1);
+  box-shadow: 0 0 30px rgba(239,68,68,0.35);
+  transform: translateY(-3px);
+}
+
+.easter-egg__pill-icon { font-size: 2rem; }
+
+.easter-egg__pill-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.easter-egg__pill-desc {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  line-height: 1.4;
+  max-width: 110px;
+}
