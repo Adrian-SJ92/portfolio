@@ -19,6 +19,7 @@ export default function Footer() {
         <p className="footer__made">
           Made with <span className="footer__heart">♥</span> & React
         </p>
+        <p className="footer__secret">// ¿conoces el código?</p>
       </div>
     </footer>
   );
